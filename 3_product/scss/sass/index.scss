@@ -1,0 +1,51 @@
+// import core file
+//-----------------------------------------------------
+@import "core/_setting";
+@import "core/_css3";
+@import "core/_media-queries";
+@import "core/_mixin";
+@import "core/_grid";
+
+//@import "module/_global";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body { background:#fff; color:#555; font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+a:hover { text-decoration:underline; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+html {overflow-y: scroll;min-width: 1020px;}
+body{font-family: "微软雅黑","宋体"; font-size: 12px;}
+
+.clear-fix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clear-fix { *zoom:1; }
+
+.swiper-container .swiper-wrapper .swiper-slide img{width: 100%;}
+.swiper-container{line-height: 0; min-width: 960px;}
+
+.top-div{width: 960px; margin: 0 auto; margin-top: 8px;}
+
+.content{width: 960px; margin: 0 auto; margin-top: 26px;}
+
+.left{float: left; width: 240px;}
+.left-ar-t{margin-top: 15px; height: 33px; line-height: 33px; font-size: 16px; color: #975004; font-family: "黑体"; padding-left: 15px; background: url(../images/left_ar_1.gif) no-repeat; overflow: hidden;}
+.left-ar-c{background: url(../images/left_ar_2.gif) repeat-y; overflow: hidden; padding: 10px 15px;}
+.left-ar-c img{width: 210px;}
+/*.contact-phone{height: 144px;}*/
+
+.right{float: right; width: 680px;font-family: "微软雅黑";}
+.right section{margin-bottom: 20px;}
+.right h2{font-size: 18px; color: #DD1807; height: 60px; line-height: 55px; border-bottom: 1px #ccc solid; font-weight: bold;}
+.right section>p{line-height: 30px;font-size: 15px;}
+.right section>p:first-of-type{margin-top: 8px;}
+.right strong{color: #FF0000;}
+table {width: 100%; border-collapse: collapse; border-spacing: 0; margin-top: 15px;}
+table tr td{padding: 8px; font-size: 13px; line-height: 24px; border: 1px solid #ccc;}
+table tr th {padding: 8px 12px; width: 100px; text-align: left; font-size: 15px; border: 1px solid #ccc; font-weight: 400;}
+table i{display: inline-block; font-style: normal; text-align: center; width: 20px; height: 20px; background-color: #FF0000; border-radius: 105px; color: #FFFFFF; margin-right: 8px;}
+
+.foot{width: 100%; background: #8b0000; color: #FFFFFF; line-height: 30px; text-align: center; overflow: hidden; margin-top: 30px;}
