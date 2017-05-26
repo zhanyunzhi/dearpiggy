@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html ng-app="ngApp">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width">
+        <title></title>
+        <link rel="stylesheet" href="assets/css/swiper.min.css" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+    </head>
+    <body>
+        <header>
+            <img src="./assets/imgs/top.jpg" class="head-img"/>
+        </header>
+        <section class="container">
+            <nav>
+                <ul class="clear-fix">
+                    <li class="active">首页</li>
+                    <li>活动报道</li>
+                    <li>嘉宾介绍</li>
+                    <li>合作伙伴</li>
+                    <li>媒体合作</li>
+                    <li>关于论坛</li>
+                </ul>
+            </nav>
+            <section class="container-top clear-fix">
+                <div class="top-left">
+                    <div class="swiper-container swiper-container1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/slider1.png" alt="" title=""/>
+                                <div class="top-intr">
+                                    <h4>我是标题我是标题我是标题我是标题</h4>
+                                    <p>我是简介我是简介我是简介我是简介我是简介我是简介我是简介我是简介我是简介我是简介我是简介我是简介我是简介我是简介</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                        <div class="swiper-button-next swiper-button-white"></div>
+                    </div>
+                </div>
+                <div class="top-right">
+                    <div>
+                        <a href="">
+                            <h3>吴晓灵：控制货币搞活金融是唯一出路</h3>
+                            <p>中国不缺钱，缺的是把这些钱合法有效渠道投入到实体经济，而控制货币搞活金融是中国经济唯一出路，因此需要提高金融资源配置效率...【全文】</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <h3>吴晓灵：控制货币搞活金融是唯一出路</h3>
+                            <p>中国不缺钱，缺的是把这些钱合法有效渠道投入到实体经济，而控制货币搞活金融是中国经济唯一出路，因此需要提高金融资源配置效率...【全文】</p>
+                        </a>
+                    </div>
+                    <hr/>
+                    <div class="news-short">
+                        <a href="">【银行】王兆星：金融杠杆作用无限但不能被神化象</a>
+                        <a href="">【保险】朱进元：保险业发展上升为国家意志 给行业带来机遇保险业发展上升为国家意志 </a>
+                        <a href="">【期货】张慎峰：金融</a>
+                        <a href="">【期货】张慎峰：金融</a>
+                        <a href="">【期货】张慎峰：金融</a>
+                    </div>
+                    <hr/>
+                </div>
+            </section>
+            <section class="guest-intr">
+                <h2>嘉宾介绍</h2>
+                <div class="guest-content">
+                    <div class="swiper-container swiper-container2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/person1.jpg" alt="" title=""/>
+                                <div class="slide-title">蔡鄂生</div>
+                                <div class="slide-intr">中国银行业监督管理委员会原副主席  清华大学五道口金融学院学术顾问委员会委员</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/person1.jpg" alt="" title=""/>
+                                <div class="slide-title">蔡鄂生</div>
+                                <div class="slide-intr">中国银行业监督管理委员会原副主席  清华大学五道口金融学院学术顾问委员会委员</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/person1.jpg" alt="" title=""/>
+                                <div class="slide-title">蔡鄂生</div>
+                                <div class="slide-intr">中国银行业监督管理委员会原副主席  清华大学五道口金融学院学术顾问委员会委员</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/person1.jpg" alt="" title=""/>
+                                <div class="slide-title">蔡鄂生</div>
+                                <div class="slide-intr">中国银行业监督管理委员会原副主席  清华大学五道口金融学院学术顾问委员会委员</div>
+                            </div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button-prev swiper-button-red"></div>
+                        <div class="swiper-button-next swiper-button-red"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="bbs-agenda">
+                <h2>论坛议程</h2>
+                <div class="bbs-date" onMouseOver="changeShow('bbsContent1')">6月3日（星期六）</div>
+                <div class="bbs-date" onMouseOver="changeShow('bbsContent2')">6月4日（星期日）</div>
+                <div class="bbs-content" id="bbsContent1">
+                    6月3日
+                </div>
+                <div class="bbs-content" id="bbsContent2" hidden>
+                    6月4日
+                </div>
+            </section>
+            <section class="bbs-intr">
+                <h2>论坛介绍</h2>
+                <p>清华五道口全球金融论坛由清华大学主办，清华大学五道口金融学院和清华大学国家金融研究院共同承办，将是一次海内外名家云集的学术盛会</p>
+                <p>清华五道口全球金融论坛由清华大学主办，清华大学五道口金融学院和清华大学国家金融研究院共同承办，将是一次海内外名家云集的学术盛会</p>
+                <p>清华五道口全球金融论坛由清华大学主办，清华五道口全球金融论坛由清华大学主办，清华大学五道口金融学院和清华大学国家金融研究院共同承办，将是一次海内外名家云集的学术盛会，将是一次海内外名家云集的学术盛会</p>
+            </section>
+            <section class="partner">
+                <h2>合作伙伴</h2>
+                <div class="partner-c"></div>
+            </section>
+        </section>
+        <footer>
+        </footer>
+    </body>
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+        var mySwiper1 = new Swiper ('.swiper-container1', {
+            direction: 'horizontal',
+            loop: true,
+            autoplayDisableOnInteraction : false,    //用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+            autoplay: 5000,//可选选项，自动滑动
+            // 如果需要分页器
+            //pagination: '.swiper-pagination',
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+        })
+        var mySwiper2 = new Swiper ('.swiper-container2', {
+            direction: 'horizontal',
+            slidesPerView: 3,
+            loop: true,
+            autoplayDisableOnInteraction : false,    //用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+            autoplay: 5000,//可选选项，自动滑动
+            // 如果需要分页器
+            //pagination: '.swiper-pagination',
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+        })
+        function changeShow(index){
+            var eContent1 = document.getElementById('bbsContent1');
+            var eContent2 = document.getElementById('bbsContent2');
+            var eContentShow = document.getElementById(index);
+            eContent1.style.display = 'none';
+            eContent2.style.display = 'none';
+            eContentShow.style.display = 'block';
+        }
+    </script>
+</html>
