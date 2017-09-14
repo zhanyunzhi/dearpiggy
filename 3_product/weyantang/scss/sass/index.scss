@@ -1,0 +1,287 @@
+// import core file
+//-----------------------------------------------------
+@import "core/_setting";
+@import "core/_css3";
+@import "core/_media-queries";
+@import "core/_mixin";
+@import "core/_grid";
+
+//@import "module/_global";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body { background:#eee; color:#000; font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+a:hover { text-decoration:underline; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+//html {overflow-y: scroll;min-width: 1020px;}
+body{font-family: "微软雅黑","宋体"; font-size: 0.28rem;}
+
+.clear-fix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clear-fix { *zoom:1; }
+
+header{
+  background-color: #fff;
+  h1{
+    font-size:0.36rem;
+    line-height:0.9rem;
+    text-align: center;
+  }
+}
+.article_title_zyz{
+  background-color: #fff;
+  border-top:1px solid #eeeeee;
+  @include clearfix();
+  padding:0.4rem 0.34rem;
+  .left{
+    @include float(left);
+    img{
+      width:0.96rem;
+      height:0.96rem;
+      @include border-radius(0.48rem);
+    }
+    span{
+      display: block;
+      margin-top:0.1rem;
+    }
+  }
+  .right{
+    margin-left:1.7rem;
+    h1{
+      font-size:0.32rem;
+    }
+    .home_page{
+      display: inline-block;
+      border:1px solid #4992f0;
+      color:#4992f0;
+      margin:0.16rem 0;
+      padding:0 0.1rem;
+      @include border-radius(0.1rem);
+    }
+    .time{
+      color:#919191;
+      span{
+        @include float(right);
+        display: inline-block;
+        padding:0 0.1rem;
+        background-color: #4992f0;
+        color:$white;
+        @include border-radius(0.1rem);
+      }
+    }
+  }
+}
+.article_content_zyz{
+  background-color: #fff;
+  margin-top:0.1rem;
+  padding:0.34rem;
+  .articleContent{
+    p {
+      margin-bottom: 0.32rem;
+      font-size: 0.32rem;
+      line-height: 0.56rem;
+      word-wrap: break-word;
+      word-break: break-all;
+      text-align: justify;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.discuss{
+  background-color: #fff;
+  border-top:1px solid #eeeeee;
+  @include clearfix();
+  margin-top:0.1rem;
+  .title{
+    @include clearfix();
+    padding:0.34rem 0.34rem 0.14rem;
+    .new{
+      @include float(left);
+      font-size: 0.32rem;
+    }
+    .more{
+      @include float(right);
+      color:#919191;
+    }
+  }
+  .content{
+    padding:0.4rem 0.34rem;
+    border-top:1px solid #eee;
+    @include clearfix();
+    .left{
+      @include float(left);
+      img{
+        width:0.96rem;
+        height:0.96rem;
+        @include border-radius(0.48rem);
+      }
+    }
+    .right {
+      margin-left: 1.7rem;
+      .name {
+        font-size: 0.32rem;
+      }
+      .home_page {
+        //display: inline-block;
+        color: #919191;
+        margin-bottom: 0.24rem;
+        margin-top: 0.1rem;
+        @include clearfix();
+        .discuss-right{
+          @include float(right);
+          img{
+            width:0.3rem;
+            height:0.3rem;
+            margin-left:0.1rem;
+          }
+        }
+      }
+      .time {
+        @include ellipsis(88%);
+        font-size: 0.32rem;
+      }
+    }
+    .no-discuss{
+      color:#919191;
+      text-align: center;
+      font-size: 0.32rem;
+    }
+  }
+}
+.recommend{
+  background-color: #fff;
+  border-top:1px solid #eeeeee;
+  @include clearfix();
+  margin-top:0.1rem;
+  .title{
+    @include clearfix();
+    padding:0.34rem 0.34rem 0.14rem;
+    .new{
+      @include float(left);
+      font-size: 0.32rem;
+    }
+    .more{
+      @include float(right);
+      color:#919191;
+    }
+  }
+  .content{
+    padding:0.4rem 0.34rem;
+    border-top:1px solid #eee;
+    @include clearfix();
+    .left{
+      @include float(left);
+      img{
+        width:0.96rem;
+        height:0.96rem;
+        @include border-radius(0.48rem);
+      }
+      div{
+        text-align: center;
+        font-size: 0.32rem;
+        margin-top:0.1rem;
+      }
+    }
+    .right {
+      margin-left: 1.7rem;
+      .name {
+        font-size: 0.32rem;
+      }
+      .time{
+        color:#4992f0;
+        margin-top:0.76rem;
+        @include float(right);
+      }
+    }
+  }
+}
+
+.shade{
+  position: fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  display: none;
+  @include bgcolor-alpha(rgba(0,0,0,0.5));
+  .shade-content{
+    position: absolute;
+    top:40%;
+    left:50%;
+    width:6rem;
+    margin-left:-3rem;
+    background-color: $white;
+    color:#000;
+    @include border-radius(0.1rem);
+    .top{
+      padding:0.4rem 0;
+      border-bottom:1px solid #eee;
+      p{
+        text-align: center;
+        font-size:0.32rem;
+        font-weight: bold;
+      }
+    }
+    button{
+      background-color: $white;
+      width:50%;
+      @include box-sizing(border-box);
+      height:0.8rem;
+      border:1px solid $white;
+      @include float(left);
+      @include border-radius(0.1rem);
+    }
+    .sure{
+      color:#4992f0;
+      border-left:1px solid #eee;
+    }
+  }
+}
+
+.download-app{
+  @include clearfix();
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  @include bgcolor-alpha(rgba(0,0,0,0.6));
+  padding:0.1rem 0.16rem;
+  display: block;
+  img{
+    width:0.64rem;
+    height:0.64rem;
+    @include border-radius(0.06rem);
+    @include float();
+  }
+  &>div{
+    @include float();
+    margin-left:0.16rem;
+    font-size:0.24rem;
+    .intro{
+      font-size:0.2rem;
+    }
+  }
+  button{
+    @include float(right);
+    background-color: #4992f0;
+    border:1px solid #4992f0;
+    font-size:0.24rem;
+    color:$white;
+    @include border-radius(0.06rem);
+    padding:0.06rem 0.16rem;
+    margin-top:0.08rem;
+    margin-right:0.24rem;
+  }
+  span{
+    @include float(right);
+    margin-top:0.14rem;
+    font-size:0.24rem;
+  }
+}

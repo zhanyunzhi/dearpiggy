@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>圈子介绍</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <script>
+        var docEle = document.documentElement;
+        fn = function() {
+            var width = docEle.clientWidth;
+            if( width < 320 ) {
+                docEle.style.fontSize = 42.6667 + "px";//
+            }
+            else if( width > 750 ) {
+                docEle.style.fontSize = 100 + "px";
+            }
+            else {
+                //以750设计稿宽度为基准设置fontSize:100px;这样保证iPhone6以下是高清
+                docEle.style.fontSize = 100 * (width / 750) + "px";
+            }
+        };
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";//区分Mobile和PC以加载不同的事件
+        window.addEventListener(evt, fn, false);
+        fn();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>WE言堂咨询</h1>
+    </header>
+    <div class="article_title_zyz">
+        <div class="left">
+            <img src="assets/imgs/head.png" />
+            <span>作者名称</span>
+        </div>
+        <div class="right">
+            <h1>这些年发生在上市公司的事儿</h1>
+            <span class="home_page" onclick="openDownMsg()">作者主页</span>
+            <div class="time">
+                <time>04-21 04:33</time>
+                <span onclick="openDownMsg()">+关注</span>
+            </div>
+        </div>
+    </div>
+    <div class="article_content_zyz">
+        <div class="articleContent">        <!--这里面写正文内容-->
+            <p>　　据2000年日本的一个民意调查显示，方便面被认为是日本20世纪最重要的发明，卡拉OK次之。</p>
+            <p>　　<img alt="" oldsrc="W020170821747550402300.jpg" src="http://www.p5w.net/weyt/201708/W020170821747550402300.jpg">&nbsp;</p>
+        </div>
+    </div>
+    <div class="discuss">
+        <div class="title">
+            <div class="new">最新评论</div>
+            <div class="more">更多评论></div>
+        </div>
+        <!--<div class="content">
+            <div class="no-discuss">暂无评论</div>
+        </div>-->
+        <div class="content" onclick="openDownMsg()">   <!--复制一份就多一条评论-->
+            <div class="left">
+                <img src="assets/imgs/head.png" />
+            </div>
+            <div class="right">
+                <div class="name">Derek</div>
+                <div class="home_page">
+                    <span>3分钟前</span>
+                    <div class="discuss-right">
+                        <span>541</span>
+                        <img src="assets/imgs/support.png" />
+                    </div>
+                </div>
+                <div class="time">大路口的哈萨克的挥洒大坏蛋啥都好看</div>
+            </div>
+        </div>
+    </div>
+    <div class="recommend">
+        <div class="title">
+            <div class="new">相关推荐</div>
+        </div>
+        <div class="content" onclick="openDownMsg()">           <!--复制一份就多一条推荐-->
+            <div class="left">
+                <img src="assets/imgs/head.png" />
+                <div>新芽</div>
+            </div>
+            <div class="right">
+                <div class="name">这些年发生在上市公司的事儿</div>
+                <div class="time">3分钟前</div>
+            </div>
+        </div>
+    </div>
+    <!--点击关注那些弹出的提示下载app的弹窗-->
+    <div class="shade" id="shade">
+        <div class="shade-content">
+            <div class="top">
+                <p>下载“全景资本圈”</p>
+                <p> 更多精彩内容</p>
+            </div>
+            <button onclick="closeShade()">取消</button>
+            <button class="sure" onclick="goToDownload()">确定</button>
+        </div>
+    </div>
+    <!--头部一直显示的提示下载APP-->
+    <div class="download-app" id="downloadApp">
+        <img src="assets/imgs/head.png" />
+        <div>
+            <p>全景资本圈APP</p>
+            <p class="intro">这里写一些简介吧</p>
+        </div>
+        <span onclick="closeApp()">关闭</span>
+        <button onclick="goToDownload()">立即下载</button>
+    </div>
+</body>
+<script>
+    var openDownMsg = function(){
+        document.getElementById('shade').style.display = 'block';       //打开提示下载app的弹窗
+    };
+    var closeShade = function(){            //关闭提示下载app的弹窗
+        document.getElementById('shade').style.display = 'none';
+    };
+    var closeApp = function(){              //关闭顶部的提示下载app
+        document.getElementById('downloadApp').style.display = 'none';
+    };
+    var goToDownload = function(){
+        window.location.href = 'http://www.p5w.net';        //点击确定之后跳转到的下载地址
+    };
+</script>
+</html>
