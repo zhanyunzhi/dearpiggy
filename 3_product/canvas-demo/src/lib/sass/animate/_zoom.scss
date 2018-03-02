@@ -1,0 +1,189 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// zoom scss
+//-----------------------------------------------------
+
+
+// zoomIn
+@mixin animate-zoomIn () {
+  @include keyframes(zoomIn){
+    0% {
+      opacity: 0;
+      @include transform(scale3d(.3, .3, .3));
+    }
+    50%, 100%{
+      opacity: 1;
+    }
+  }
+  .zoomIn {
+    @include animation-name(zoomIn);
+    @extend %animated;
+  }
+}
+
+// zoomInDown
+@mixin animate-zoomInDown () {
+  @include keyframes(zoomInDown){
+    0% {
+      opacity: 0;
+      @include transform(scale3d(.1, .1, .1) translate3d(0, -1000px, 0));
+    }
+    60%{
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(0, 60px, 0));
+    }
+    100%{
+      opacity: 1;
+      @include transform(scale3d(1, 1, 1) translate3d(0, 0, 0));
+    }
+  }
+  .zoomInDown {
+    @include animation-name(zoomInDown);
+    @extend %animated;
+  }
+}
+
+// zoomInLeft
+@mixin animate-zoomInLeft () {
+  @include keyframes(zoomInLeft ){
+    0% {
+      opacity: 0;
+      @include transform(scale3d(.1, .1, .1) translate3d(-1000px, 0, 0));
+    }
+    60% {
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(10px, 0, 0));
+    }
+  }
+  .zoomInLeft {
+    @include animation-name(zoomInLeft);
+    @extend %animated;
+  }
+}
+// zoomInRight
+@mixin animate-zoomInRight () {
+  @include keyframes(zoomInRight ){
+    0% {
+      opacity: 0;
+      @include transform(scale3d(.1, .1, .1) translate3d(1000px, 0, 0));
+    }
+    60% {
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(-10px, 0, 0));
+    }
+  }
+  .zoomInRight {
+    @include animation-name(zoomInRight);
+    @extend %animated;
+  }
+}
+// zoomInUp
+@mixin animate-zoomInUp () {
+  @include keyframes(zoomInUp ){
+    0% {
+      opacity: 0;
+      @include transform(scale3d(.1, .1, .1) translate3d(0, 1000px, 0));
+    }
+    60% {
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(0, -60px, 0));
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .zoomInUp {
+    @include animation-name(zoomInUp);
+    @extend %animated;
+  }
+}
+// zoomOut
+@mixin animate-zoomOut () {
+  @include keyframes(zoomOut){
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      @include transform(scale3d(.3, .3, .3));
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .zoomOut {
+    @include animation-name(zoomOut);
+    @extend %animated;
+  }
+}
+// zoomOutDown
+@mixin animate-zoomOutDown () {
+  @include keyframes(zoomOutDown){
+    0% {
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(0, -60px, 0));
+    }
+    100% {
+      opacity: 0;
+      @include transform(scale3d(.1, .1, .1) translate3d(0, 2000px, 0));
+    }
+  }
+  .zoomOutDown {
+    @include animation-name(zoomOutDown);
+    @extend %animated;
+  }
+}
+// zoomOutLeft
+@mixin animate-zoomOutLeft () {
+  @include keyframes(zoomOutLeft){
+    0% {
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(-42px, 0, 0));
+    }
+    100% {
+      opacity: 0;
+      @include transform(scale(.1) translate3d(-2000px, 0, 0));
+      @include transform-origin(right center);
+    }
+  }
+  .zoomOutLeft {
+    @include animation-name(zoomOutLeft);
+    @extend %animated;
+  }
+}
+// zoomOutRight
+@mixin animate-zoomOutRight () {
+  @include keyframes(zoomOutRight){
+    0% {
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(-42px, 0, 0));
+    }
+    100% {
+      opacity: 0;
+      @include transform(scale(.1) translate3d(2000px, 0, 0));
+      @include transform-origin(right center);
+    }
+  }
+  .zoomOutRight {
+    @include animation-name(zoomOutRight);
+    @extend %animated;
+  }
+}
+// zoomOutUp
+@mixin animate-zoomOutUp () {
+  @include keyframes(zoomOutUp){
+    0% {
+      opacity: 1;
+      @include transform(scale3d(.475, .475, .475) translate3d(0, 60px, 0));
+    }
+    100% {
+      opacity: 0;
+      @include transform(scale3d(.1, .1, .1) translate3d(0, -2000px, 0));
+      @include transform-origin(center bottom);
+    }
+  }
+  .zoomOutUp {
+    @include animation-name(zoomOutUp);
+    @extend %animated;
+  }
+}

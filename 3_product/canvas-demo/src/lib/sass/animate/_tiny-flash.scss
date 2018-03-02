@@ -1,0 +1,70 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// tiny flash scss
+//-----------------------------------------------------
+
+
+
+// fastFlashAndShow
+@mixin animate-fastFlashAndShow () {
+  @include keyframes(fastFlashAndShow){
+    0%, 20%, 40%{
+      opacity: 0;
+    }
+
+    10%, 30%, 100% {
+      opacity: 1;
+    }
+  }
+  .fastFlashAndShow {
+    @include animation-name(fastFlashAndShow);
+    @extend %animated;
+  }
+}
+// doubleFlash
+@mixin animate-doubleFlash () {
+  @include keyframes(doubleFlash){
+    0%, 30%{
+      opacity: 0;
+    }
+
+    15%, 100% {
+      opacity: 1;
+    }
+  }
+  .doubleFlash {
+    @include animation-name(doubleFlash);
+    @extend %animated;
+  }
+}
+// tripleFlash
+@mixin animate-tripleFlash () {
+  @include keyframes(tripleFlash){
+    0%, 16%, 32%{
+      opacity: 0;
+    }
+
+    8%, 24%, 100% {
+      opacity: 1;
+    }
+  }
+  .tripleFlash {
+    @include animation-name(tripleFlash);
+    @extend %animated;
+  }
+}
+// flashLikeStar
+@mixin animate-flashLikeStar () {
+  @include keyframes(flashLikeStar){
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.15;
+    }
+  }
+  .flashLikeStar {
+    @include animation-name(flashLikeStar);
+    @extend %animated;
+  }
+}

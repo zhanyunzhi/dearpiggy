@@ -1,0 +1,171 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// mixin scss
+// 包括常用的mixin，%及@function
+// mixin，通过@include调用，样式通过拷贝的方式使用，尤其适用于传递参数
+// %，通过@extend调用，样式通过组合申明的方式使用，适用于不传参数的代码片段
+// @function，返回一个值，用于调用
+//-----------------------------------------------------
+
+// mixin & %
+// 既定义了mixin也定义了%，根据需求使用@include或@extend调用
+// 自己根据项目要求新增的一些mixin
+//-----------------------------------------------------
+//利用媒体查询，对不同的dpr下的设备使用不同的字体大小，使其在不同的dpr下显示的大小一样
+@mixin px2px($name, $px){
+  #{$name}: $px / 1px * 0.01rem;
+  /*#{$name}: round($px / 2) * 1;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    #{$name}: $px * 1;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2.5) {
+    #{$name}: round($px * 2.5 / 2) * 1;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2.75) {
+    #{$name}: round($px * 2.75 / 2) * 1;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    #{$name}: round($px * 3 / 2) * 1;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 4) {
+    #{$name}: $px * 2;
+  }*/
+}
+@mixin fontSize($size){
+  font-size: $size;
+  [data-dpr="2"] {
+    font-size: $size * 2;
+  }
+  [data-dpr="3"] {
+    font-size:  $size * 3;
+  }
+}
+//空心箭头
+%arrow-basic{
+  content:"";
+  display: inline-block;
+}
+@mixin arrow($direction,$size,$color){
+  @extend %arrow-basic;
+  width: $size;
+  height: $size;
+  border-top: 1px solid $color;  /* 上边框的宽 */
+  border-right: 1px solid $color; /* 右边框的宽 */
+  @if $direction == top {
+    @include rotate(-45deg);
+  }
+  @else if $direction == right {
+    @include rotate(45deg);
+  }
+  @else if $direction == bottom {
+    @include rotate(135deg);
+  }
+  @else if $direction == left {
+    @include rotate(-135deg);
+  }
+  //transform: rotate(45deg);
+}
+/*实心箭头，弧度更大的*/
+%triangle-steep-basic{
+  display: inline-block;
+  content:"";
+  width: 0;
+  height: 0;
+}
+@mixin triangle-steep($direction,$size,$color){
+  @extend %triangle-steep-basic;
+  @if $direction == top {
+    border-left: $size solid transparent;
+    border-bottom: $size * 2 solid $color;
+    border-right: $size solid transparent;
+  }
+  @else if $direction == right {
+    border-top: $size solid transparent;
+    border-left: $size * 2 solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @else if $direction == bottom {
+    border-left: $size solid transparent;
+    border-top: $size * 2 solid $color;
+    border-right: $size solid transparent;
+  }
+  @else if $direction == left {
+    border-top: $size solid transparent;
+    border-right: $size * 2 solid $color;
+    border-bottom: $size solid transparent;
+  }
+}
+//水平居中
+@mixin hor-center {
+  @include flex();
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+%hor-center {
+  @include hor-center();
+}
+//动画
+// slideOutUp
+@mixin zyz-animate-slideUp ($time) {
+  @include keyframes(zyzSlideUp){
+    0% {
+      opacity: 1;
+      @include translate(0,0);
+    }
+    20%{
+      @include translate(30px,-40px);
+    }
+    40%{
+      @include translate(0,-80px);
+    }
+    60%{
+      @include translate(50px,-120px);
+    }
+    80%{
+      @include translate(0,-160px);
+    }
+    100% {
+      opacity: 0;
+      @include translate(70px,-200px);
+    }
+  }
+  .zyzSlideUp {
+    @include animation-name(zyzSlideUp);
+    @include animation-duration($time);
+    @include animation-timing-function(linear);
+    @extend %animated;
+  }
+}
+// slideOutUp
+@mixin zyz-animate-slideUp2 ($time) {
+  @include keyframes(zyzSlideUp2){
+    0% {
+      opacity: 1;
+      @include translate(0,0);
+    }
+    20%{
+      @include translate(-30px,-40px);
+    }
+    40%{
+      @include translate(0,-80px);
+    }
+    60%{
+      @include translate(-50px,-120px);
+    }
+    80%{
+      @include translate(0,-160px);
+    }
+    100% {
+      opacity: 0;
+      @include translate(-70px,-200px);
+    }
+  }
+  .zyzSlideUp2 {
+    @include animation-name(zyzSlideUp2);
+    @include animation-duration($time);
+    @include animation-timing-function(linear);
+    @extend %animated;
+  }
+}

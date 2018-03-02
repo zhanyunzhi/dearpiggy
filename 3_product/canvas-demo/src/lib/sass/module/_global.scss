@@ -1,0 +1,32 @@
+html{
+    -webkit-text-size-adjust:none;
+    font-family:  'Microsoft Yahei';
+}
+body,h1, h2, h3, h4, h5, h6,{
+  margin:0;
+}
+ul, li{
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+a{
+  text-decoration:none;
+}
+input[type="submit"],input[type="reset"],input[type="button"],button{
+  -webkit-appearance:none;  /*Remove the apple the default UI to render button*/
+}
+.clear-fix{
+  @include clearfix;
+}
+
+.shade{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99998;
+  height: 100%;
+  width: 100%;
+  @include bgcolor-alpha(rgba(0,0,0,.6));
+  @include opacity(0);
+}

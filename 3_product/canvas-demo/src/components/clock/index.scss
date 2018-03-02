@@ -1,0 +1,17 @@
+// import core file
+//-----------------------------------------------------
+@import "../../lib/sass/core/_setting";
+@import "../../lib/sass/core/_css3";
+@import "../../lib/sass/core/_media-queries";
+@import "../../lib/sass/core/_mixin";
+@import "../../lib/sass/core/_grid";
+@import "../../lib/sass/module/_global";
+div{
+  text-align: center;
+  margin-top: 200px;
+}
+#canvas{
+  border:1px solid #999;
+}
+
+
