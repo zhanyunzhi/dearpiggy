@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>企业IPO上市的隐形红线</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <script>
+        var docEle = document.documentElement;
+        fn = function() {
+            var width = docEle.clientWidth;
+            if( width < 320 ) {
+                docEle.style.fontSize = 42.6667 + "px";//
+            }
+            else if( width > 720 ) {
+                docEle.style.fontSize = 100 + "px";
+            }
+            else {
+                //以750设计稿宽度为基准设置fontSize:100px;这样保证iPhone6以下是高清
+                docEle.style.fontSize = 100 * (width / 720) + "px";
+            }
+        };
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";//区分Mobile和PC以加载不同的事件
+        window.addEventListener(evt, fn, false);
+        fn();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>企业IPO上市的隐形红线</h1>
+    </header>
+    <div class="zyz-person-intro">
+        <img src="assets/imgs/banner.png" class="banner"/>
+        <div class="intro-content">
+            <div class="content-1">
+                <img src="assets/imgs/head.png" class="content-head"/>
+                <div class="person">
+                    <span class="person-name">邓海清</span>
+                    <span class="person-flag">主讲人</span>
+                    <p>九州证券全球首席经济学家</p>
+                </div>
+                <div class="cost">
+                    <p>活动费用</p>
+                    <span class="cost-number">50</span>
+                    <span>全景币</span>
+                </div>
+            </div>
+            <div class="person-intro">
+                <p>复旦大学金融学博士、CF40论坛特邀研究员，新财富上榜分析师；研究领域包括宏观经济、政府政策、金融市场等。</p>
+            </div>
+            <div class="apply">
+                <ul>
+                    <li><img src="assets/imgs/head.png" /></li>
+                    <li><img src="assets/imgs/head.png" /></li>
+                    <li><img src="assets/imgs/head.png" /></li>
+                    <li><img src="assets/imgs/head.png" /></li>
+                    <li><span>···</span></li>
+                </ul>
+                <span class="apply-number">等32人已报名</span>
+                <button>报名</button>
+            </div>
+        </div>
+    </div>
+    <div class="zyz-active-intro">
+        <h2>活动简介</h2>
+        <div class="active-intro-content">
+            <p>全景网近期实地探访多家明星上市公司。他们作为资本市场的引领者，在中国经济面临历史性大转型大升级的语境下，以资本市场为平台输出中</p>
+            <p>全景网近期实地探访多家明星上市公司。他们作为资本市场的引领者，在中国经济面临历史性大转型大升级的语境下，以资本市场为平台输出中</p>
+            <p>全景网近期实地探访多家明星上市公司。他们作为资本市场的引领者，在中国经济面临历史性大转型大升级的语境下，以资本市场为平台输出中</p>
+            <p>全景网近期实地探访多家明星上市公司。他们作为资本市场的引领者，在中国经济面临历史性大转型大升级的语境下，以资本市场为平台输出中</p>
+            <p>全景网近期实地探访多家明星上市公司。他们作为资本市场的引领者，在中国经济面临历史性大转型大升级的语境下，以资本市场为平台输出中</p>
+        </div>
+    </div>
+
+    <!--点击关注那些弹出的提示下载app的弹窗-->
+    <div class="shade" id="shade">
+        <div class="shade-content">
+            <div class="top">
+                <p>下载“全景资本圈”</p>
+                <p> 更多精彩内容</p>
+            </div>
+            <button onclick="closeShade()">取消</button>
+            <button class="sure" onclick="goToDownload()">确定</button>
+        </div>
+    </div>
+    <!--头部一直显示的提示下载APP-->
+    <div class="download-app" id="downloadApp">
+        <img src="assets/imgs/head.png" />
+        <div>
+            <p>全景资本圈APP</p>
+            <p class="intro">这里写一些简介吧</p>
+        </div>
+        <span onclick="closeApp()">关闭</span>
+        <button onclick="goToDownload()">立即下载</button>
+    </div>
+</body>
+<script>
+    var openDownMsg = function(){
+        document.getElementById('shade').style.display = 'block';       //打开提示下载app的弹窗
+    };
+    var closeShade = function(){            //关闭提示下载app的弹窗
+        document.getElementById('shade').style.display = 'none';
+    };
+    var closeApp = function(){              //关闭顶部的提示下载app
+        document.getElementById('downloadApp').style.display = 'none';
+    };
+    var goToDownload = function(){
+        window.location.href = 'http://www.p5w.net';        //点击确定之后跳转到的下载地址
+    };
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>财经视频</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <script>
+        var docEle = document.documentElement;
+        fn = function() {
+            var width = docEle.clientWidth;
+            if( width < 320 ) {
+                docEle.style.fontSize = 42.6667 + "px";//
+            }
+            else if( width > 750 ) {
+                docEle.style.fontSize = 100 + "px";
+            }
+            else {
+                //以750设计稿宽度为基准设置fontSize:100px;这样保证iPhone6以下是高清
+                docEle.style.fontSize = 100 * (width / 750) + "px";
+            }
+        };
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";//区分Mobile和PC以加载不同的事件
+        window.addEventListener(evt, fn, false);
+        fn();
+    </script>
+</head>
+<body>
+    <!--头部一直显示的提示下载APP-->
+    <div class="download-app" id="downloadApp">
+        <img src="assets/imgs/head.png" />
+        <div>
+            <p>全景资本圈APP</p>
+            <p class="intro">这里写一些简介吧</p>
+        </div>
+        <span onclick="closeApp()">关闭</span>
+        <button onclick="goToDownload()">立即下载</button>
+    </div>
+    <!--点击关注那些弹出的提示下载app的弹窗-->
+    <div class="shade" id="shade">
+        <div class="shade-content">
+            <div class="top">
+                <p>下载“全景资本圈”</p>
+                <p> 更多精彩内容</p>
+            </div>
+            <button onclick="closeShade()">取消</button>
+            <button class="sure" onclick="goToDownload()">确定</button>
+        </div>
+    </div>
+
+    <article class="zyz-video">
+        <img class="video-play" src="assets/imgs/play.png" onclick="goToDownload()"/>
+        <img class="video-img" src="assets/imgs/video_img.png" onclick="goToDownload()"/>
+        <h3>华阳集团邹淦荣：带领一条大船在低谷期转型</h3>
+        <div class="video-time">
+            <time>2017-10-26</time>
+            <img src="assets/imgs/share_icon.png" onclick="openDownMsg()"/>
+        </div>
+    </article>
+    <div class="zyz-video-intro">
+        <p>“原来做的东西都要怀疑，原来没有做的东西要敢于尝试;原来做的东西都要怀疑，原来没有做的东西要敢于尝试。 </p>
+    </div>
+</body>
+<script>
+    var openDownMsg = function(){
+        document.getElementById('shade').style.display = 'block';       //打开提示下载app的弹窗
+    };
+    var closeShade = function(){            //关闭提示下载app的弹窗
+        document.getElementById('shade').style.display = 'none';
+    };
+    var closeApp = function(){              //关闭顶部的提示下载app
+        document.getElementById('downloadApp').style.display = 'none';
+    };
+    var goToDownload = function(){
+        window.location.href = 'http://www.p5w.net';        //点击确定之后跳转到的下载地址
+    };
+</script>
+</html>
