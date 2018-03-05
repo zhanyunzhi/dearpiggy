@@ -6,8 +6,8 @@ function index(){
     $(function(){
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        var canvasWidth = 300;
-        var canvasHeight = 300;
+        var canvasWidth = 200;
+        var canvasHeight = 200;
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
 
@@ -32,22 +32,22 @@ function index(){
             ctx.textBaseline = 'middle';        //设置绘制文本时使用的当前文本基线
             num.forEach(function(number, i){
                 rad = 2 * Math.PI / 12 * i;     //当前数字的弧度，3点是0
-                x = Math.cos(rad) * (radius - 30);      //当前数字所在的坐标X
-                y = Math.sin(rad) * (radius - 30);      //当前数字所在的坐标Y
+                x = Math.cos(rad) * (radius - 30 * rem);      //当前数字所在的坐标X
+                y = Math.sin(rad) * (radius - 30 * rem);      //当前数字所在的坐标Y
                 ctx.fillText(number, x, y, 30);     //写文字
             })
             //画数字后面的点
             for(var i=0; i<=60; i++){
                 rad = 2 * Math.PI / 60 * i;     //60个点
-                x = Math.cos(rad) * (radius - 18);      //当前点所在的坐标X
-                y = Math.sin(rad) * (radius - 18);      //当前点所在的坐标Y
+                x = Math.cos(rad) * (radius - 18 * rem);      //当前点所在的坐标X
+                y = Math.sin(rad) * (radius - 18 * rem);      //当前点所在的坐标Y
                 ctx.beginPath();
                 if(i % 5 === 0){
                     ctx.fillStyle = '#000000';
                 }else{
                     ctx.fillStyle = '#cccccc';
                 }
-                ctx.arc(x, y, 2, 0, 2 * Math.PI, false);
+                ctx.arc(x, y, 2 * rem, 0, 2 * Math.PI, false);
                 ctx.fill();
             }
         }
@@ -60,7 +60,7 @@ function index(){
             ctx.lineWidth = 6;          //设置线的宽度
             ctx.lineCap = 'round';      //设置线的结束端点样式
             ctx.moveTo(0, 10);          //移动到初始位置
-            ctx.lineTo(0, -r / 2);      //移动到目标位置
+            ctx.lineTo(0, -r / 2 - rem);      //移动到目标位置
             ctx.stroke();               //画线
             ctx.restore();      //返回之前保存过的路径状态和属性
         }
@@ -72,7 +72,7 @@ function index(){
             ctx.lineWidth = 3;          //设置线的宽度
             ctx.lineCap = 'round';      //设置线的结束端点样式
             ctx.moveTo(0, 10);          //移动到初始位置
-            ctx.lineTo(0, -r / 2 - 20);      //移动到目标位置
+            ctx.lineTo(0, -r / 2 - 20 * rem);      //移动到目标位置
             ctx.stroke();               //画线
             ctx.restore();      //返回之前保存过的路径状态和属性
         }
@@ -84,8 +84,8 @@ function index(){
             ctx.rotate(rad);
             ctx.moveTo(-2, 20);          //移动到初始位置
             ctx.lineTo(2, 20);      //移动到目标位置
-            ctx.lineTo(1, -r / 2 - 30);      //移动到目标位置
-            ctx.lineTo(-1, -r / 2 - 30);      //移动到目标位置
+            ctx.lineTo(1, -r / 2 - 30 * rem);      //移动到目标位置
+            ctx.lineTo(-1, -r / 2 - 30 * rem);      //移动到目标位置
             ctx.fill();               //画线
             ctx.restore();      //返回之前保存过的路径状态和属性
         }
@@ -93,7 +93,7 @@ function index(){
             ctx.save();     //保存当前环境状态
             ctx.beginPath();
             ctx.fillStyle = '#ffffff';
-            ctx.arc(0, 0, 2, 0, Math.PI * 2, false);
+            ctx.arc(0, 0, 2 * rem, 0, Math.PI * 2, false);
             ctx.fill();               //画线
             ctx.restore();      //返回之前保存过的路径状态和属性
         }
